@@ -1,0 +1,4 @@
+John Doe
+123 Main St
+Skills: Python, Data Analysis, SEO
+Experience: 3 years at Acme Corp as Data Analyst
