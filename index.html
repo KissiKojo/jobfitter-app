@@ -164,7 +164,11 @@
       const b = document.getElementById("bioFile").files[0];
       if (b) form.append("bio_file", b);
 
-      const res = await fetch("http://127.0.0.1:8000/analyze", { method: "POST", body: form });
+      const res = await fetch("https://jobfitter-app.onrender.com/analyze", {
+  method: "POST",
+  body: form
+});
+
       const data = await res.json();
 
       // Populate the cards:
