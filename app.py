@@ -17,10 +17,17 @@ app = FastAPI()
 # 2. Enable CORS for your front-end (http://127.0.0.1:5500)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],  # or ["*"] for dev
+    allow_origins=[
+        "http://127.0.0.1:5500",                 # local dev
+        "https://jobfitter-app.onrender.com",    # Render API (if serving front-end there)
+        "https://kissikojo.github.io"            # your GitHub Pages origin
+        # You could also use "*" to allow any origin during dev:
+        # "*"
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # 3. Load your OpenAI API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
